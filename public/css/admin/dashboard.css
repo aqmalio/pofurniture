@@ -1,0 +1,149 @@
+body{
+    font-family: 'roboto', sans-serif;
+    background: #f4f4f4;
+    background-size: 1360px;
+    width: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background-color: #f8f8f8;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    left: -300px     ;
+     /* for sidebar to stay on top */
+     z-index: 1;
+    transition: left 0.5s ease-in-out;
+  } 
+
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: gray;
+    user-select: none;
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    font-size: 20px;
+    color:black;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-top: 1 px solid rgba(255, 255, 255, 1);
+    border-bottom: 1px solid black ;
+
+}
+
+ul li:hover a{
+    padding-left: 40px;
+}
+
+.sidebar ul a i{
+    margin-right: 10px;
+}
+
+#check{
+    display: none;
+}
+
+/* tumbol = */
+.button {
+    position: absolute;
+    cursor: pointer;
+    background:grey;
+    border-radius: 5px  ;
+    font-size: 40px;
+    left: 1px;
+    top: 50%;
+    color: white;
+    padding: 2px 4px;
+    transition: all .5s;
+}
+
+/* tombol x */
+.exit {
+    position: absolute;
+    cursor: pointer;
+    background: #042331;
+    border-radius: 3px  ;
+    z-index: 1111;
+    left:85%;
+    top: 25px;
+    font-size: 15px;
+    color:white ;
+    float: right;
+    padding : 4px 9px;
+}
+
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+
+#toggle:checked ~ .sidebar {
+    left: 0;
+  }
+  
+#toggle:checked ~ .content {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* hvjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj */
+ 
+  
+  #toggle {
+    display: none;
+  }
+  
+
+  
+ 
+  
+  .content {
+    position: static;
+    transition: background-color 0.5s ease-in-out; 
+  }
+  
+  .content header{
+    background: #042331;
+    height: 75px ;
+  }
+
+  .content header h1{
+      color: white;
+     padding-top: 20px;
+      padding-left: 100px;
+  }
+
+
+
+  section{
+      background-position: center;
+      background-size: auto;
+      transition: all .7s;
+  }
+
+  section content img{
+    width: 1000px;
+  }
+      
+  #toggle:checked ~ section{
+      margin-left: 300px;
+
+  }
+
+
