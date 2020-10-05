@@ -16,7 +16,13 @@
 
                     {{ __('You are logged in!') }}
 
-                    <h1>ini adalah halaman /home</h1>
+                    <div class="flex-center position-ref full-height">
+                        <div class="links">
+                            <a href="/lproduk"> ke Halaman Tampilan Produk</a>
+                            <a href="/blog">Ke halaman Tampilan Blog</a>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -33,11 +33,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        {{-- <form action="{{ route('biodata.pencarian') }}" method="post"> --}}
+                            {{ csrf_field() }}
+                            <div class="navbar-nav mr-auto" >
+                                <input type="text" name="" class="form-control" placeholder="Pencarian">
+                                <button type="submit" class="btn btn-info">cari</button>
+                            </div>
+                        {{-- </form> --}}
+                        
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

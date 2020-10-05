@@ -28,11 +28,13 @@
          <!-- Menu -->
          <aside class='sidebar'>
            <label for='toggle' class='exit'>X</label>
-           <header>Product Control</header>
+           <header>Admin Control</header>
             <ul>
                 <li><a href="/home"><i class="fas fa-qrcode"></i>Dashboard</a></li>
                 <li><a href="/createproduk"><i class="fas fa-link"></i>Tambah produk</a></a></li>
-                <li><a href="/editpage"><i class="fas fa-qrcode"></i>kontrol produk</a></li>
+                <li><a href="/editpageproduk"><i class="fas fa-qrcode"></i>produk kontrol</a></li>
+                <li><a href="/createblog"><i class="fas fa-qrcode"></i>Tambah blog</a></li>
+                <li><a href="/editpageblog"><i class="fas fa-qrcode"></i>blog kontrol</a></li>
             </ul>
          </aside>
 

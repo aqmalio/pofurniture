@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class produkcontroller extends Controller
 {
@@ -16,6 +17,7 @@ class produkcontroller extends Controller
         $produk = new produk();
 
         $produk->judul = $request->input('judul');
+        $produk->slug = str::slug(request('judul'));
         $produk->harga = $request->input('harga');
         $produk->deskripsi = $request->input('deskripsi');
 
@@ -40,6 +42,12 @@ class produkcontroller extends Controller
         return view('produk')->with('produks',$produks);
     }
 
+    public function tampilanslug($slug)
+    {
+        $produks = produk::where('slug', '=', $slug)->first();
+        return view('produkslug')->with('produks',$produks);
+    }
+
     public function displayadmin(){
         $produks = produk::all();
         return view('admin.editpage')->with('produks',$produks);
@@ -58,6 +66,7 @@ class produkcontroller extends Controller
         $produks = produk::find($id);
 
         $produks->judul = $request->input('judul');
+        $produks->slug = str::slug(request('judul'));
         $produks->harga = $request->input('harga');
         $produks->deskripsi = $request->input('deskripsi');
 
@@ -74,7 +83,7 @@ class produkcontroller extends Controller
         
         $produks->save();
     
-        return redirect('/editpage')->with('produks', $produks);
+        return redirect('/editpageproduk')->with('produks', $produks);
 
     } 
 
@@ -83,7 +92,7 @@ class produkcontroller extends Controller
     {
         $produks = produk::find($id);
         $produks -> delete();
-        return redirect('/editpage')->with('produks', $produks);
+        return redirect('/editpageproduk')->with('produks', $produks);
     }
 
         
