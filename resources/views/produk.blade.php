@@ -4,6 +4,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+
+                <form action="/produk" method="GET">
+                    <input type="text" name="cari" placeholder="Cari produk..." value="{{ old('cari') }}">
+                    <input type="submit" class="btn btn-info" value="CARI">
+                </form> 
+
                 @foreach ($produks as $produk)
                     <div class="card">
                         <div class="card-header">

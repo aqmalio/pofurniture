@@ -79,10 +79,29 @@
                 </div>
             @endif --}}
 
+            
+
             <div class="content">
+
+                <div class="links">
+                    <h2>
+                        <a href="/produk">Halaman produk</a>
+                        <a href="/blog">Halaman blog</a>
+                    </h2>
+                </div>
+
+                {{-- <div> 
+                    <form action="/" method="GET">
+                        <input type="text" name="cari" placeholder="Cari produk..." value="{{ old('cari') }}">
+                        <input type="submit" class="btn btn-info" value="CARI">
+                    </form> 
+                </div> --}}
+
+                
                 <div class="title m-b-md">
                     Laravel
                 </div>
+
 
                 <div class="links">
                     <a href="/login">login admin</a>

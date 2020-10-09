@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\blog;
+use App\produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -26,10 +27,7 @@ class blogcontroller extends Controller
         return view('admin.blog.create')->with('blog', $blog ) ;
     }
 
-    public function display(){
-        $blogs = blog::all();
-        return view('blog')->with('blogs',$blogs);
-    }
+    
 
     
     public function tampilanslug($slug)
@@ -73,10 +71,15 @@ class blogcontroller extends Controller
         return redirect('/editpageblog')->with('blogs', $blogs);
     }
 
-    // public function cari(Request $request)
-    // {
-    //     $cari=$request->cari;
-    //     $blog=blog::where('judul', $cari)->get();
-    //     return $blog;
-    // }
+    public function display(Request $request){
+        $cari = $request->get('cari');
+        $blogs = blog::all();
+
+        if ($cari) {
+            $blogs = blog::where('judul','like',"%".$cari."%")->get();
+        }
+            return view('blog')->with('blogs',$blogs);
+    }
+
+
 }

@@ -40,11 +40,11 @@
                     <ul class="navbar-nav ml-auto">
 
                         {{-- <form action="{{ route('biodata.pencarian') }}" method="post"> --}}
-                            {{ csrf_field() }}
-                            <div class="navbar-nav mr-auto" >
-                                <input type="text" name="" class="form-control" placeholder="Pencarian">
-                                <button type="submit" class="btn btn-info">cari</button>
-                            </div>
+                            {{-- {{ csrf_field() }} --}}
+                            {{-- <div class="navbar-nav mr-auto" >
+                                
+                                
+                            </div> --}}
                         {{-- </form> --}}
                         
 

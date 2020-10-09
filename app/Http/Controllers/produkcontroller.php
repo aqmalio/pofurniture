@@ -37,9 +37,16 @@ class produkcontroller extends Controller
         return view('admin.create')->with('produk', $produk ) ;
     }
 
-    public function display(){
+    public function display(Request $request){
+        $cari = $request->get('cari');
         $produks = produk::all();
-        return view('produk')->with('produks',$produks);
+
+        if ($cari) {
+            $produks = produk::where('judul','like',"%".$cari."%")->get();
+        }
+            return view('produk')->with('produks',$produks);
+
+         
     }
 
     public function tampilanslug($slug)

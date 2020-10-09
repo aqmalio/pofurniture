@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::get('/', 'caricontroller@cari');
 
 
 
@@ -48,8 +49,6 @@ Route::get('/produk/{slug}', 'produkcontroller@tampilanslug');
 
 Route::get('/blog', 'blogcontroller@display');
 Route::get('/blog/{slug}', 'blogcontroller@tampilanslug');
-
-
 
 // Route::post('/blog/pencarian', 'blogcontroller@cari')->name('biodata.pencarian');
 
