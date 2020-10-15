@@ -9,47 +9,46 @@ use Illuminate\Support\Str;
 
 class blogcontroller extends Controller
 {
-    public function index(){
+    public function __construct() {
+        date_default_timezone_set("Asia/Jakarta");
+    }
+
+    public function index()
+    {
+        $blogs = blog::all();
+        return view('admin.blog.index', compact('blogs'));
+    }
+
+    public function create()
+    {
         return view('admin.blog.create');
     }
 
-    public function store(Request $request){
-
-        
+    public function store(Request $request)
+    {
         $blog = new blog();
-
         $blog->judul = $request->input('judul');
         $blog->slug = str::slug(request('judul'));
         $blog->konten = $request->input('konten');
-        
+
         $blog->save();
 
-        return view('admin.blog.create')->with('blog', $blog ) ;
+        return redirect('/admin/blog')->with('success', 'Data berhasil ditambahkan');
     }
 
-    
-
-    
-    public function tampilanslug($slug)
+    public function show($slug)
     {
-        $blogs = blog::where('slug', '=', $slug)->first();
-        return view('blogslug')->with('blogs',$blogs);
+        $blog = blog::where('slug', '=', $slug)->first();
+        return view('main.pages.blog-detail')->with('blog', $blog);
     }
-
-    public function displayadmin(){
-        $blogs = blog::all();
-        return view('admin.blog.editpageblog')->with('blogs',$blogs);
-    }
-
-
 
     public function edit($id)
     {
-        $blogs = blog::find($id);
-        return view('admin.blog.edit')->with('blogs', $blogs);
+        $blog = blog::find($id);
+        return view('admin.blog.edit')->with('blog', $blog);
     }
 
-        // update
+    // update
     public function update(Request $request, $id)
     {
         $blogs = blog::find($id);
@@ -57,29 +56,29 @@ class blogcontroller extends Controller
         $blogs->judul = $request->input('judul');
         $blogs->slug = str::slug(request('judul'));
         $blogs->konten = $request->input('konten');
-        
-        $blogs->save();
-    
-        return redirect('/editpageblog')->with('blogs', $blogs);
 
-    } 
+        $blogs->update();
+
+        return redirect('/admin/blog')->with('success', 'Data berhasil diupdate');
+    }
 
     public function delete($id)
     {
-        $blogs = blog::find($id);
-        $blogs -> delete();
-        return redirect('/editpageblog')->with('blogs', $blogs);
+        $blog = blog::find($id);
+        $blog->delete();
+
+        return redirect('/admin/blog')->with('success', 'Data berhasil dihapus');
     }
 
-    public function display(Request $request){
+    public function display(Request $request)
+    {
         $cari = $request->get('cari');
-        $blogs = blog::all();
+        $blogs = blog::orderBy('created_at','desc')->get();
 
         if ($cari) {
-            $blogs = blog::where('judul','like',"%".$cari."%")->get();
+            $blogs = blog::where('judul', 'like', "%" . $cari . "%")->orderBy('created_at','desc')->get();
         }
-            return view('blog')->with('blogs',$blogs);
+
+        return view('main.pages.blog')->with('blogs', $blogs);
     }
-
-
 }

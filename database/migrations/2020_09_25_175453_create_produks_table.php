@@ -18,6 +18,7 @@ class CreateProduksTable extends Migration
             $table->string('judul');
             $table->string('slug');
             $table->mediumText('gambar')->nullable();
+            $table->mediumText('model3d')->nullable();
             $table->string('harga');
             $table->text('deskripsi');
             $table->timestamps();
