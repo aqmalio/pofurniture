@@ -62,6 +62,7 @@ body {
 }
 
 .article__body {
+   white-space: pre-line;
    margin: 50px 0 70px 0;
 }
 
