@@ -15,7 +15,7 @@ Home
 
 <section id="top" class="hero">
     <h1 data-aos="fade-right" class="hero__title">Piece of Furniture</h1>
-    <p data-aos="fade-right" class="hero__description">Mebel dan dekorasi untuk ruangan anda</p>
+    <p data-aos="fade-right" class="hero__description">Koleksi mebel dan dekorasi untuk ruangan anda</p>
     <a data-aos="fade-left" href="#about" class="hero__button">Tentang Kami</a>
 </section>
 
