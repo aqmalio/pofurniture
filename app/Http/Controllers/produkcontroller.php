@@ -134,7 +134,7 @@ class produkcontroller extends Controller
     public function display(Request $request)
     {
         $cari = $request->get('cari');
-        $produks = produk::orderBy('created_at', 'desc')->get();
+        $produks = produk::orderBy('created_at', 'desc')->simplePaginate(6);
 
         if ($cari) {
             $produks = produk::where('judul', 'like', "%" . $cari . "%")->orderBy('created_at', 'desc')->get();

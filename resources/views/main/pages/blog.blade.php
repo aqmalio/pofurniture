@@ -8,6 +8,7 @@ Blog
 <link rel="stylesheet" href="{{ asset('css/custom/reset.css') }}">
 <link rel="stylesheet" href="{{ asset('css/custom/navbar.css') }}">
 <link rel="stylesheet" href="{{ asset('css/custom/blog.css') }}">
+<link rel="stylesheet" href="{{ asset('css/custom/paginate.css') }}">
 @endsection
 
 @section('content')
@@ -24,6 +25,10 @@ Blog
         <p class="article__published">{{ TanggalIndonesia($blog->created_at) }}</p>
     </div>
     @endforeach
+    <div class="pagination justify-content-center">
+      {{$blogs->links()}}
+    </div>
+
 </div>
 
 @endsection

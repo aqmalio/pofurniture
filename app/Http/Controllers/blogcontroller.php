@@ -73,7 +73,7 @@ class blogcontroller extends Controller
     public function display(Request $request)
     {
         $cari = $request->get('cari');
-        $blogs = blog::orderBy('created_at','desc')->get();
+        $blogs = blog::orderBy('created_at','desc')->simplePaginate(6);
 
         if ($cari) {
             $blogs = blog::where('judul', 'like', "%" . $cari . "%")->orderBy('created_at','desc')->get();

@@ -55,6 +55,16 @@ Home
 
         <div data-aos="fade-up" class="collapse">
             <button class="collapse__button">
+                Tujuan Wesbite ini dibuat?<i class="collapse__icon">&#9650;</i>
+            </button>
+
+            <div class="collapse__content">
+                Web ini juga dibuat untuk mengikuti perlombaan Olimpiade Vokasi Indonesia 2020 (OLIVIA) di bidan Web Design mewakili prodi D3 Manajemen Informatika Universitas Syiah Kuala.
+            </div>
+        </div>
+
+        <div data-aos="fade-up" class="collapse">
+            <button class="collapse__button">
                 Apa alasan dibuatnya fitur preview 3D dan Augmented Reality? <i class="collapse__icon">&#9650;</i>
             </button>
 

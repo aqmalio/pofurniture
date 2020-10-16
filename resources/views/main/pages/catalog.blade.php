@@ -11,6 +11,7 @@ Catalog
 <link rel="stylesheet" href="{{ asset('css/custom/reset.css') }}">
 <link rel="stylesheet" href="{{ asset('css/custom/navbar.css') }}">
 <link rel="stylesheet" href="{{ asset('css/custom/catalog.css') }}">
+<link rel="stylesheet" href="{{ asset('css/custom/paginate.css') }}">
 @endsection
 
 @section('content')
@@ -40,6 +41,9 @@ Catalog
         </div>
     </div>
     @endforeach
+    <div class="pagination justify-content-center">
+      {{$produks->links()}}
+    </div>
 </div>
 
 @endsection
