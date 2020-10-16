@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label for="">Konten</label>
-                <textarea name="konten" rows="10" class="form-control"  placeholder="konten"></textarea>
+                <textarea style="white-space: pre-line;" name="konten" rows="10" class="form-control"  placeholder="konten"></textarea>
             </div>
             <div class="form-group">
                 <input type="submit"  class="btn btn-primary" value="Simpan">
