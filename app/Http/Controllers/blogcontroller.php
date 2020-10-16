@@ -76,7 +76,7 @@ class blogcontroller extends Controller
         $blogs = blog::orderBy('created_at','desc')->simplePaginate(6);
 
         if ($cari) {
-            $blogs = blog::where('judul', 'like', "%" . $cari . "%")->orderBy('created_at','desc')->get();
+            $blogs = blog::where('judul', 'like', "%" . $cari . "%")->orderBy('created_at','desc')->simplePaginate(6);
         }
 
         return view('main.pages.blog')->with('blogs', $blogs);

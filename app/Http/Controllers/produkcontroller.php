@@ -137,7 +137,7 @@ class produkcontroller extends Controller
         $produks = produk::orderBy('created_at', 'desc')->simplePaginate(6);
 
         if ($cari) {
-            $produks = produk::where('judul', 'like', "%" . $cari . "%")->orderBy('created_at', 'desc')->get();
+            $produks = produk::where('judul', 'like', "%" . $cari . "%")->orderBy('created_at', 'desc')->simplePaginate(6);
         }
 
         return view('main.pages.catalog')->with('produks', $produks);
